@@ -4,7 +4,7 @@ class Peliculas{
   Peliculas();
 
   Peliculas.fromJsonList(List<dynamic> jsonList){
-    if(jsonList = null) return;
+    if (jsonList == null) return;
 
     for(var item in jsonList){
       final pelicula = new Pelicula.fromJsonMap(item);
@@ -63,5 +63,14 @@ class Pelicula {
     voteAverage      = json['vote_average']/1;
     overview         = json['overview'];
     releaseDate      = json['release_date'];
+  }
+
+  getPosterImg(){
+    if (posterPath != null) {
+      return 'https://image.tmdb.org/t/p/w500/$posterPath';
+      
+    } else {
+      return 'https://static.thenounproject.com/png/145685-200.png';
+    }
   }
 }
