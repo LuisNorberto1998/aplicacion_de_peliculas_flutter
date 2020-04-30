@@ -16,6 +16,8 @@ class Peliculas{
 
 
 class Pelicula {
+  String uniqueId;
+
   double popularity;
   int voteCount;
   bool video;
@@ -68,6 +70,14 @@ class Pelicula {
   getPosterImg(){
     if (posterPath != null) {
       return 'https://image.tmdb.org/t/p/w500/$posterPath';
+      
+    } else {
+      return 'https://static.thenounproject.com/png/145685-200.png';
+    }
+  }
+  getBakcgroundImg(){
+    if (backdropPath != null) {
+      return 'https://image.tmdb.org/t/p/w500/$backdropPath';
       
     } else {
       return 'https://static.thenounproject.com/png/145685-200.png';
